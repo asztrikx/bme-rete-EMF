@@ -1,0 +1,543 @@
+!SESSION 2023-03-04 21:32:59.396 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2023-03-04 21:33:02.461
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
+!SESSION 2023-03-04 21:39:23.183 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2023-03-04 21:39:25.515
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
+
+!ENTRY org.eclipse.core.resources 2 10035 2023-03-04 21:39:27.367
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.apache.log4j 4 0 2023-03-04 21:39:56.082
+!MESSAGE org.eclipse.xtext.internal.ResourceServiceProviderDescriptor  - Guice provision errors:
+
+1) null returned by binding at org.eclipse.xtext.ui.shared.SharedStateModule.configureIWorkbench(SharedStateModule.java:140)
+ but org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench is not @Nullable
+  while locating org.eclipse.ui.IWorkbench
+    for field at org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultEditorImageUtil
+    for field at org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider.imageUtil(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+  while locating org.eclipse.jface.viewers.ILabelProvider annotated with @org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider()
+    for field at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.descriptionLabelProvider(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider
+
+1 error (occurred in org.yakindu.sct.model.resource.SCTExecutableExtensionFactory)
+
+!STACK 1
+org.eclipse.core.runtime.CoreException: Guice provision errors:
+
+1) null returned by binding at org.eclipse.xtext.ui.shared.SharedStateModule.configureIWorkbench(SharedStateModule.java:140)
+ but org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench is not @Nullable
+  while locating org.eclipse.ui.IWorkbench
+    for field at org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultEditorImageUtil
+    for field at org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider.imageUtil(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+  while locating org.eclipse.jface.viewers.ILabelProvider annotated with @org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider()
+    for field at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.descriptionLabelProvider(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider
+
+1 error (occurred in org.yakindu.sct.model.resource.SCTExecutableExtensionFactory)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.handleCreationError(AbstractGuiceAwareExecutableExtensionFactory.java:96)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:64)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:265)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.xtext.internal.ResourceServiceProviderDescriptor.getExtension(ResourceServiceProviderDescriptor.java:46)
+	at org.eclipse.xtext.internal.AbstractResourceServiceProviderDescriptor.get(AbstractResourceServiceProviderDescriptor.java:20)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl$InternalData.getServiceProvider(ResourceServiceProviderRegistryImpl.java:46)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:109)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:129)
+	at org.eclipse.xtext.ui.resource.UriValidator.isValid(UriValidator.java:27)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.isValidUri(Storage2UriMapperImpl.java:264)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.getUri(Storage2UriMapperImpl.java:249)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.getUri(ToBeBuiltComputer.java:345)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateStorage(ToBeBuiltComputer.java:287)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer$2.visit(ToBeBuiltComputer.java:260)
+	at org.eclipse.core.internal.resources.Resource.lambda$1(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProject(ToBeBuiltComputer.java:254)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProjectNewResourcesOnly(ToBeBuiltComputer.java:221)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:321)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:156)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:342)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:462)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: com.google.inject.ProvisionException: Guice provision errors:
+
+1) null returned by binding at org.eclipse.xtext.ui.shared.SharedStateModule.configureIWorkbench(SharedStateModule.java:140)
+ but org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench is not @Nullable
+  while locating org.eclipse.ui.IWorkbench
+    for field at org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultEditorImageUtil
+    for field at org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider.imageUtil(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+  while locating org.eclipse.jface.viewers.ILabelProvider annotated with @org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider()
+    for field at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.descriptionLabelProvider(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider
+
+1 error
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:57)
+	... 38 more
+!SUBENTRY 1 org.yakindu.sct.model.resource 4 0 2023-03-04 21:39:56.083
+!MESSAGE Guice provision errors:
+
+1) null returned by binding at org.eclipse.xtext.ui.shared.SharedStateModule.configureIWorkbench(SharedStateModule.java:140)
+ but org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench is not @Nullable
+  while locating org.eclipse.ui.IWorkbench
+    for field at org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultEditorImageUtil
+    for field at org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider.imageUtil(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+  while locating org.eclipse.jface.viewers.ILabelProvider annotated with @org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider()
+    for field at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.descriptionLabelProvider(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider
+
+1 error (occurred in org.yakindu.sct.model.resource.SCTExecutableExtensionFactory)
+!STACK 0
+com.google.inject.ProvisionException: Guice provision errors:
+
+1) null returned by binding at org.eclipse.xtext.ui.shared.SharedStateModule.configureIWorkbench(SharedStateModule.java:140)
+ but org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench is not @Nullable
+  while locating org.eclipse.ui.IWorkbench
+    for field at org.eclipse.xtext.ui.label.DefaultEditorImageUtil.workbench(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultEditorImageUtil
+    for field at org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider.imageUtil(Unknown Source)
+  while locating org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+  while locating org.eclipse.jface.viewers.ILabelProvider annotated with @org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider()
+    for field at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.descriptionLabelProvider(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider
+
+1 error
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:57)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:265)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.xtext.internal.ResourceServiceProviderDescriptor.getExtension(ResourceServiceProviderDescriptor.java:46)
+	at org.eclipse.xtext.internal.AbstractResourceServiceProviderDescriptor.get(AbstractResourceServiceProviderDescriptor.java:20)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl$InternalData.getServiceProvider(ResourceServiceProviderRegistryImpl.java:46)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:109)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:129)
+	at org.eclipse.xtext.ui.resource.UriValidator.isValid(UriValidator.java:27)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.isValidUri(Storage2UriMapperImpl.java:264)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.getUri(Storage2UriMapperImpl.java:249)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.getUri(ToBeBuiltComputer.java:345)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateStorage(ToBeBuiltComputer.java:287)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer$2.visit(ToBeBuiltComputer.java:260)
+	at org.eclipse.core.internal.resources.Resource.lambda$1(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProject(ToBeBuiltComputer.java:254)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProjectNewResourcesOnly(ToBeBuiltComputer.java:221)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:321)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:156)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:342)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:462)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.apache.log4j 4 0 2023-03-04 21:39:56.159
+!MESSAGE org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl  - Erroneous resource service provider registered for 'platform:/resource/hu.bme.mit.yakindu.analysis/model_input/example.sct'. Removing it from the registry.
+
+!STACK 0
+java.lang.ClassCastException: The type null is not a valid interface org.eclipse.xtext.resource.IResourceServiceProvider or interface org.eclipse.xtext.resource.IResourceServiceProvider$Provider contributed by org.yakindu.sct.model.resource[497]
+	at org.eclipse.xtext.internal.AbstractResourceServiceProviderDescriptor.get(AbstractResourceServiceProviderDescriptor.java:35)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl$InternalData.getServiceProvider(ResourceServiceProviderRegistryImpl.java:46)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:109)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:129)
+	at org.eclipse.xtext.ui.resource.UriValidator.isValid(UriValidator.java:27)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.isValidUri(Storage2UriMapperImpl.java:264)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.getUri(Storage2UriMapperImpl.java:249)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.getUri(ToBeBuiltComputer.java:345)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateStorage(ToBeBuiltComputer.java:287)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer$2.visit(ToBeBuiltComputer.java:260)
+	at org.eclipse.core.internal.resources.Resource.lambda$1(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProject(ToBeBuiltComputer.java:254)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProjectNewResourcesOnly(ToBeBuiltComputer.java:221)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:321)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:156)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:342)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:462)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.apache.log4j 4 0 2023-03-04 21:39:56.838
+!MESSAGE org.eclipse.xtext.internal.ResourceServiceProviderDescriptor  - Guice provision errors:
+
+1) Error in custom provider, java.lang.IllegalStateException: The bundle has not been started!
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:75)
+  while locating org.eclipse.xtext.ui.resource.IStorage2UriMapper
+    for field at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.storage2UriMapper(Unknown Source)
+  at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.class(Unknown Source)
+  while locating org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider
+  while locating org.eclipse.xtext.parser.IEncodingProvider annotated with @org.eclipse.xtext.service.DispatchingProvider$Ui()
+    for field at org.eclipse.xtext.service.DispatchingProvider.uiBinding(Unknown Source)
+  while locating org.eclipse.xtext.service.DefaultRuntimeModule$IEncodingProviderDispatcher
+  while locating org.eclipse.xtext.parser.IEncodingProvider
+    for field at org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider.encodingProvider(Unknown Source)
+  while locating org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider
+  while locating org.eclipse.xtext.resource.IResourceServiceProvider
+    for parameter 0 at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.<init>(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider
+  while locating org.eclipse.xtext.ui.resource.IResourceUIServiceProvider
+
+1 error (occurred in org.yakindu.sct.generator.genmodel.ui.SGenExecutableExtensionFactory)
+Bundle org.yakindu.sct.generator.genmodel.ui was not activated.
+Please check that all dependencies could be resolved and 'Bundle-ActivationPolicy: lazy' is configured in the bundle's MANIFEST.MF. Check also the error log.
+
+!STACK 1
+org.eclipse.core.runtime.CoreException: Guice provision errors:
+
+1) Error in custom provider, java.lang.IllegalStateException: The bundle has not been started!
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:75)
+  while locating org.eclipse.xtext.ui.resource.IStorage2UriMapper
+    for field at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.storage2UriMapper(Unknown Source)
+  at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.class(Unknown Source)
+  while locating org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider
+  while locating org.eclipse.xtext.parser.IEncodingProvider annotated with @org.eclipse.xtext.service.DispatchingProvider$Ui()
+    for field at org.eclipse.xtext.service.DispatchingProvider.uiBinding(Unknown Source)
+  while locating org.eclipse.xtext.service.DefaultRuntimeModule$IEncodingProviderDispatcher
+  while locating org.eclipse.xtext.parser.IEncodingProvider
+    for field at org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider.encodingProvider(Unknown Source)
+  while locating org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider
+  while locating org.eclipse.xtext.resource.IResourceServiceProvider
+    for parameter 0 at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.<init>(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider
+  while locating org.eclipse.xtext.ui.resource.IResourceUIServiceProvider
+
+1 error (occurred in org.yakindu.sct.generator.genmodel.ui.SGenExecutableExtensionFactory)
+Bundle org.yakindu.sct.generator.genmodel.ui was not activated.
+Please check that all dependencies could be resolved and 'Bundle-ActivationPolicy: lazy' is configured in the bundle's MANIFEST.MF. Check also the error log.
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.handleCreationError(AbstractGuiceAwareExecutableExtensionFactory.java:96)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:64)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:265)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.xtext.internal.ResourceServiceProviderDescriptor.getExtension(ResourceServiceProviderDescriptor.java:46)
+	at org.eclipse.xtext.internal.AbstractResourceServiceProviderDescriptor.get(AbstractResourceServiceProviderDescriptor.java:20)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl$InternalData.getServiceProvider(ResourceServiceProviderRegistryImpl.java:46)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:109)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:129)
+	at org.eclipse.xtext.ui.resource.UriValidator.isValid(UriValidator.java:27)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.isValidUri(Storage2UriMapperImpl.java:264)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.getUri(Storage2UriMapperImpl.java:249)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.getUri(ToBeBuiltComputer.java:345)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateStorage(ToBeBuiltComputer.java:287)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer$2.visit(ToBeBuiltComputer.java:260)
+	at org.eclipse.core.internal.resources.Resource.lambda$1(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProject(ToBeBuiltComputer.java:254)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProjectNewResourcesOnly(ToBeBuiltComputer.java:221)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:321)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:156)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:342)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:462)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: com.google.inject.ProvisionException: Guice provision errors:
+
+1) Error in custom provider, java.lang.IllegalStateException: The bundle has not been started!
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:75)
+  while locating org.eclipse.xtext.ui.resource.IStorage2UriMapper
+    for field at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.storage2UriMapper(Unknown Source)
+  at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.class(Unknown Source)
+  while locating org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider
+  while locating org.eclipse.xtext.parser.IEncodingProvider annotated with @org.eclipse.xtext.service.DispatchingProvider$Ui()
+    for field at org.eclipse.xtext.service.DispatchingProvider.uiBinding(Unknown Source)
+  while locating org.eclipse.xtext.service.DefaultRuntimeModule$IEncodingProviderDispatcher
+  while locating org.eclipse.xtext.parser.IEncodingProvider
+    for field at org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider.encodingProvider(Unknown Source)
+  while locating org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider
+  while locating org.eclipse.xtext.resource.IResourceServiceProvider
+    for parameter 0 at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.<init>(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider
+  while locating org.eclipse.xtext.ui.resource.IResourceUIServiceProvider
+
+1 error
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:57)
+	... 38 more
+Caused by: java.lang.IllegalStateException: The bundle has not been started!
+	at org.eclipse.xtext.ui.shared.Access$InternalProvider.get(Access.java:46)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:53)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:54)
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:53)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:53)
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:53)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.InjectorImpl$3.get(InjectorImpl.java:737)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:84)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.InjectorImpl$3.get(InjectorImpl.java:737)
+	at com.google.inject.internal.InjectorImpl$4$1.call(InjectorImpl.java:978)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:974)
+	... 40 more
+!SUBENTRY 1 org.yakindu.sct.generator.genmodel.ui 4 0 2023-03-04 21:39:56.839
+!MESSAGE Guice provision errors:
+
+1) Error in custom provider, java.lang.IllegalStateException: The bundle has not been started!
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:75)
+  while locating org.eclipse.xtext.ui.resource.IStorage2UriMapper
+    for field at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.storage2UriMapper(Unknown Source)
+  at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.class(Unknown Source)
+  while locating org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider
+  while locating org.eclipse.xtext.parser.IEncodingProvider annotated with @org.eclipse.xtext.service.DispatchingProvider$Ui()
+    for field at org.eclipse.xtext.service.DispatchingProvider.uiBinding(Unknown Source)
+  while locating org.eclipse.xtext.service.DefaultRuntimeModule$IEncodingProviderDispatcher
+  while locating org.eclipse.xtext.parser.IEncodingProvider
+    for field at org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider.encodingProvider(Unknown Source)
+  while locating org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider
+  while locating org.eclipse.xtext.resource.IResourceServiceProvider
+    for parameter 0 at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.<init>(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider
+  while locating org.eclipse.xtext.ui.resource.IResourceUIServiceProvider
+
+1 error (occurred in org.yakindu.sct.generator.genmodel.ui.SGenExecutableExtensionFactory)
+Bundle org.yakindu.sct.generator.genmodel.ui was not activated.
+Please check that all dependencies could be resolved and 'Bundle-ActivationPolicy: lazy' is configured in the bundle's MANIFEST.MF. Check also the error log.
+!STACK 0
+com.google.inject.ProvisionException: Guice provision errors:
+
+1) Error in custom provider, java.lang.IllegalStateException: The bundle has not been started!
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:75)
+  while locating org.eclipse.xtext.ui.resource.IStorage2UriMapper
+    for field at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.storage2UriMapper(Unknown Source)
+  at org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider.class(Unknown Source)
+  while locating org.eclipse.xtext.ui.editor.WorkspaceEncodingProvider
+  while locating org.eclipse.xtext.parser.IEncodingProvider annotated with @org.eclipse.xtext.service.DispatchingProvider$Ui()
+    for field at org.eclipse.xtext.service.DispatchingProvider.uiBinding(Unknown Source)
+  while locating org.eclipse.xtext.service.DefaultRuntimeModule$IEncodingProviderDispatcher
+  while locating org.eclipse.xtext.parser.IEncodingProvider
+    for field at org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider.encodingProvider(Unknown Source)
+  while locating org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider
+  while locating org.eclipse.xtext.resource.IResourceServiceProvider
+    for parameter 0 at org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider.<init>(Unknown Source)
+  while locating org.eclipse.xtext.ui.resource.DefaultResourceUIServiceProvider
+  while locating org.eclipse.xtext.ui.resource.IResourceUIServiceProvider
+
+1 error
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:57)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:265)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.xtext.internal.ResourceServiceProviderDescriptor.getExtension(ResourceServiceProviderDescriptor.java:46)
+	at org.eclipse.xtext.internal.AbstractResourceServiceProviderDescriptor.get(AbstractResourceServiceProviderDescriptor.java:20)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl$InternalData.getServiceProvider(ResourceServiceProviderRegistryImpl.java:46)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:109)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:129)
+	at org.eclipse.xtext.ui.resource.UriValidator.isValid(UriValidator.java:27)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.isValidUri(Storage2UriMapperImpl.java:264)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.getUri(Storage2UriMapperImpl.java:249)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.getUri(ToBeBuiltComputer.java:345)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateStorage(ToBeBuiltComputer.java:287)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer$2.visit(ToBeBuiltComputer.java:260)
+	at org.eclipse.core.internal.resources.Resource.lambda$1(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProject(ToBeBuiltComputer.java:254)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProjectNewResourcesOnly(ToBeBuiltComputer.java:221)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:321)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:156)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:342)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:462)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.IllegalStateException: The bundle has not been started!
+	at org.eclipse.xtext.ui.shared.Access$InternalProvider.get(Access.java:46)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:53)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:54)
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:53)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:53)
+	at com.google.inject.internal.SingleFieldInjector.inject(SingleFieldInjector.java:53)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.InjectorImpl$3.get(InjectorImpl.java:737)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:84)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.InjectorImpl$3.get(InjectorImpl.java:737)
+	at com.google.inject.internal.InjectorImpl$4$1.call(InjectorImpl.java:978)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:974)
+	... 40 more
+
+!ENTRY org.apache.log4j 4 0 2023-03-04 21:39:56.846
+!MESSAGE org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl  - Erroneous resource service provider registered for 'platform:/resource/hu.bme.mit.yakindu.analysis/model_input/example.sgen'. Removing it from the registry.
+
+!STACK 0
+java.lang.ClassCastException: The type null is not a valid interface org.eclipse.xtext.resource.IResourceServiceProvider or interface org.eclipse.xtext.resource.IResourceServiceProvider$Provider contributed by org.yakindu.sct.generator.genmodel.ui[494]
+	at org.eclipse.xtext.internal.AbstractResourceServiceProviderDescriptor.get(AbstractResourceServiceProviderDescriptor.java:35)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl$InternalData.getServiceProvider(ResourceServiceProviderRegistryImpl.java:46)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:109)
+	at org.eclipse.xtext.resource.impl.ResourceServiceProviderRegistryImpl.getResourceServiceProvider(ResourceServiceProviderRegistryImpl.java:129)
+	at org.eclipse.xtext.ui.resource.UriValidator.isValid(UriValidator.java:27)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.isValidUri(Storage2UriMapperImpl.java:264)
+	at org.eclipse.xtext.ui.resource.Storage2UriMapperImpl.getUri(Storage2UriMapperImpl.java:249)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.getUri(ToBeBuiltComputer.java:345)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateStorage(ToBeBuiltComputer.java:287)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer$2.visit(ToBeBuiltComputer.java:260)
+	at org.eclipse.core.internal.resources.Resource.lambda$1(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProject(ToBeBuiltComputer.java:254)
+	at org.eclipse.xtext.builder.impl.ToBeBuiltComputer.updateProjectNewResourcesOnly(ToBeBuiltComputer.java:221)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:321)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:156)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:798)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:219)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:342)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:462)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:574)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:548)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2023-03-04 21:43:42.552 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2023-03-04 21:43:45.268
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
+!SESSION 2023-03-04 21:50:33.061 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2023-03-04 21:50:36.422
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
