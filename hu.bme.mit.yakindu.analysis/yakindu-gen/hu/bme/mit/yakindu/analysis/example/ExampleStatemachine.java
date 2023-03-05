@@ -345,13 +345,18 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		
 		if (try_transition) {
 			if (react()==false) {
-				if (timeEvents[0]) {
+				if (sCInterface.black) {
 					exitSequence_main_region_Black();
-					sCInterface.setBlackTime(sCInterface.getBlackTime() - 1);
-					
-					enterSequence_main_region_Black_default();
+					enterSequence_main_region_White_default();
 				} else {
-					did_transition = false;
+					if (timeEvents[0]) {
+						exitSequence_main_region_Black();
+						sCInterface.setBlackTime(sCInterface.getBlackTime() - 1);
+						
+						enterSequence_main_region_Black_default();
+					} else {
+						did_transition = false;
+					}
 				}
 			}
 		}
