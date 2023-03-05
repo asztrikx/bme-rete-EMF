@@ -27,6 +27,7 @@ public class Main {
 		
 		// Reading model
 		EList<State> trapStates = new BasicEList<State>();
+		EList<String> allStateName = new BasicEList<String>();
 		EList<State> unnamedStates = new BasicEList<State>();
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
@@ -48,6 +49,7 @@ public class Main {
 				}
 				if(state.getName().equals(""))
 					unnamedStates.add(state);
+				allStateName.add(state.getName());
 			}
 		}
 		System.out.println("csapdák:");
@@ -58,6 +60,8 @@ public class Main {
 		System.out.println("Nem volt neve, átnevezve:");
 		int i = 0;
 		for (State unnamed: unnamedStates) {
+			while(allStateName.contains("Unnamed" + i))
+				++i;
 			unnamed.setName("Unnamed" + i);
 			++i;
 			System.out.println(unnamed.getName());
