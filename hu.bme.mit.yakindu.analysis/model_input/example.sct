@@ -15,6 +15,7 @@
         <outgoingTransitions xmi:id="_eo-xIO12Eeaky9HhW8GsWQ" specification="white" target="_MlHjEO12Eeaky9HhW8GsWQ"/>
         <outgoingTransitions xmi:id="_26kFsO12Eeaky9HhW8GsWQ" specification="after 1 s/&#xD;&#xA;whiteTime-=1" target="_No5UQO12Eeaky9HhW8GsWQ"/>
       </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_QhWdgLs_Ee2BAMb7OOuicg" name=""/>
     </regions>
   </sgraph:Statechart>
   <notation:Diagram xmi:id="_6_tyoO11Eeaky9HhW8GsWQ" type="org.yakindu.sct.ui.editor.editor.StatechartDiagramEditor" element="_6_kosO11Eeaky9HhW8GsWQ" measurementUnit="Pixel">
@@ -84,6 +85,22 @@
           <styles xsi:type="notation:FontStyle" xmi:id="_No7whO12Eeaky9HhW8GsWQ"/>
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_No-MwO12Eeaky9HhW8GsWQ" name="isHorizontal" booleanValue="true"/>
           <layoutConstraint xsi:type="notation:Bounds" xmi:id="_No7whe12Eeaky9HhW8GsWQ" x="54" y="92"/>
+        </children>
+        <children xmi:id="_QhaH4Ls_Ee2BAMb7OOuicg" type="State" element="_QhWdgLs_Ee2BAMb7OOuicg">
+          <children xsi:type="notation:DecorationNode" xmi:id="_Qhau8Ls_Ee2BAMb7OOuicg" type="StateName">
+            <styles xsi:type="notation:ShapeStyle" xmi:id="_Qhau8bs_Ee2BAMb7OOuicg"/>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_Qhau8rs_Ee2BAMb7OOuicg"/>
+          </children>
+          <children xsi:type="notation:Compartment" xmi:id="_Qhau87s_Ee2BAMb7OOuicg" type="StateTextCompartment">
+            <children xsi:type="notation:Shape" xmi:id="_Qhau9Ls_Ee2BAMb7OOuicg" type="StateTextCompartmentExpression" fontName="Verdana" lineColor="4210752">
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Qhau9bs_Ee2BAMb7OOuicg"/>
+            </children>
+          </children>
+          <children xsi:type="notation:Compartment" xmi:id="_QhbWALs_Ee2BAMb7OOuicg" type="StateFigureCompartment"/>
+          <styles xsi:type="notation:ShapeStyle" xmi:id="_QhaH4bs_Ee2BAMb7OOuicg" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
+          <styles xsi:type="notation:FontStyle" xmi:id="_QhaH4rs_Ee2BAMb7OOuicg"/>
+          <styles xsi:type="notation:BooleanValueStyle" xmi:id="_QhbWAbs_Ee2BAMb7OOuicg" name="isHorizontal" booleanValue="true"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_QhaH47s_Ee2BAMb7OOuicg" x="205" y="34"/>
         </children>
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_6_tyqu11Eeaky9HhW8GsWQ"/>
       </children>

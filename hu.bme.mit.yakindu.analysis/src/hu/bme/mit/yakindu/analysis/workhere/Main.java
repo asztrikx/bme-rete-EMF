@@ -27,6 +27,7 @@ public class Main {
 		
 		// Reading model
 		EList<State> trapStates = new BasicEList<State>();
+		EList<State> unnamedStates = new BasicEList<State>();
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
 		while (iterator.hasNext()) {
@@ -45,6 +46,8 @@ public class Main {
 				if (!other) {
 					trapStates.add(state);
 				}
+				if(state.getName().equals(""))
+					unnamedStates.add(state);
 			}
 		}
 		System.out.println("csapdák:");
@@ -52,6 +55,13 @@ public class Main {
 			System.out.println(trap.getName());
 		}
 		
+		System.out.println("Nem volt neve, átnevezve:");
+		int i = 0;
+		for (State unnamed: unnamedStates) {
+			unnamed.setName("Unnamed" + i);
+			++i;
+			System.out.println(unnamed.getName());
+		}
 		
 		// Transforming the model into a graph representation
 		String content = model2gml.transform(root);
