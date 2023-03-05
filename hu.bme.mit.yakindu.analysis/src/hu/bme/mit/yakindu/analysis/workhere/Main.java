@@ -26,6 +26,7 @@ public class Main {
 		EObject root = manager.loadModel("model_input/example.sct");
 		
 		// Reading model
+		EList<State> trapStates = new BasicEList<State>();
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
 		while (iterator.hasNext()) {
@@ -34,10 +35,21 @@ public class Main {
 				State state = (State) content;
 				System.out.println(state.getName());
 				EList<Transition> edges = state.getOutgoingTransitions();
+				boolean other = false;
 				for (Transition edge: edges) {
 					System.out.println(edge.getSource().getName() + " -> " + edge.getTarget().getName());
+					if (state != edge.getTarget()) {
+						other = true;
+					}
+				}
+				if (!other) {
+					trapStates.add(state);
 				}
 			}
+		}
+		System.out.println("csapdák:");
+		for (State trap: trapStates) {
+			System.out.println(trap.getName());
 		}
 		
 		
