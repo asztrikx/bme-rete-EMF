@@ -5,9 +5,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.yakindu.base.expressions.expressions.PrimitiveValueExpression;
+import org.yakindu.base.types.Direction;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Statechart;
 import org.yakindu.sct.model.sgraph.Transition;
+import org.yakindu.sct.model.stext.stext.EventDefinition;
+import org.yakindu.sct.model.stext.stext.VariableDefinition;
 
 import hu.bme.mit.model2gml.Model2GML;
 import hu.bme.mit.yakindu.analysis.modelmanager.ModelManager;
@@ -50,6 +54,16 @@ public class Main {
 				if(state.getName().equals(""))
 					unnamedStates.add(state);
 				allStateName.add(state.getName());
+			}
+			if (content instanceof VariableDefinition) {
+				VariableDefinition variable = (VariableDefinition) content;
+				System.out.println("Variable: " + variable.getName());
+			}
+			if (content instanceof EventDefinition) {
+				EventDefinition event = (EventDefinition) content;
+				if (event.getDirection() == Direction.IN) {
+					System.out.println("IN event: " + event.getName());
+				}
 			}
 		}
 		System.out.println("csapdák:");
