@@ -25,31 +25,31 @@ public class RunStatechart {
 		while(true) {
 		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		    boolean exit = false;
-			String input = br.readLine();
-			switch(input) {
-				case "start":
-					s.raiseStart();
+		    String input = br.readLine();
+		    switch(input) {
+				case "finish":
+					s.raiseFinish();
 					break;
-				case "white":
-					s.raiseWhite();
+				case "purple":
+					s.raisePurple();
 					break;
-				case "black":
-					s.raiseBlack();
+				case "yellow":
+					s.raiseYellow();
 					break;
-				case "exit":
+		    case "exit":
 					exit = true;
 					s.exit();
 					break;
 			}
-			s.runCycle();
-			print(s);
-			if (exit) break;
+		    s.runCycle();
+		    print(s);
+		    if (exit) break;
 		}
 		System.exit(0);
 	}
 
 	public static void print(IExampleStatemachine s) {
-		System.out.println("W = " + s.getSCInterface().getWhiteTime());
-		System.out.println("B = " + s.getSCInterface().getBlackTime());
+		System.out.println("P = " + s.getSCInterface().getPurpleTime());
+		System.out.println("Y = " + s.getSCInterface().getYellowTime());
 	}
 }
