@@ -33,6 +33,7 @@ public class Main {
 		EList<State> trapStates = new BasicEList<State>();
 		EList<String> allStateName = new BasicEList<String>();
 		EList<State> unnamedStates = new BasicEList<State>();
+		EList<VariableDefinition> variables = new BasicEList<VariableDefinition>();
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
 		while (iterator.hasNext()) {
@@ -58,6 +59,8 @@ public class Main {
 			if (content instanceof VariableDefinition) {
 				VariableDefinition variable = (VariableDefinition) content;
 				System.out.println("Variable: " + variable.getName());
+				
+				variables.add(variable);
 			}
 			if (content instanceof EventDefinition) {
 				EventDefinition event = (EventDefinition) content;
@@ -80,6 +83,13 @@ public class Main {
 			++i;
 			System.out.println(unnamed.getName());
 		}
+		System.out.println("Generált print függvény:");
+		System.out.println("public static void print(IExampleStatemachine s) {");
+		for (VariableDefinition variable : variables) {
+			String variableUpperCase = variable.getName().substring(0,1).toUpperCase() + variable.getName().substring(1);
+			System.out.println("	System.out.println(\"W = \" + s.getSCInterface().get" + variableUpperCase + "());");
+		}
+		System.out.println("}");
 		
 		// Transforming the model into a graph representation
 		String content = model2gml.transform(root);
