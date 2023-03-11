@@ -158,7 +158,8 @@ public class Main {
 		}
 		writer.println(mid);
 		for (VariableDefinition variable : variables) {
-			writer.println("		System.out.println(\"" + toFirstLetterUpperCase(variable.getName()).charAt(0) + " = \" + s.getSCInterface().get" + toFirstLetterUpperCase(variable.getName()) + "());");
+			String upper = toFirstLetterUpperCase(variable.getName());
+			writer.println("		System.out.println(\"" + upper.charAt(0) + " = \" + s.getSCInterface().get" + upper + "());");
 		}
 		writer.println(end);
 	}
