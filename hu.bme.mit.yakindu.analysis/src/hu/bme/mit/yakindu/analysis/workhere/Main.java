@@ -1,5 +1,7 @@
 package hu.bme.mit.yakindu.analysis.workhere;
 
+import java.io.PrintWriter;
+
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -14,6 +16,7 @@ import org.yakindu.sct.model.stext.stext.EventDefinition;
 import org.yakindu.sct.model.stext.stext.VariableDefinition;
 
 import hu.bme.mit.model2gml.Model2GML;
+import hu.bme.mit.yakindu.analysis.example.IExampleStatemachine;
 import hu.bme.mit.yakindu.analysis.modelmanager.ModelManager;
 
 public class Main {
@@ -34,6 +37,7 @@ public class Main {
 		EList<String> allStateName = new BasicEList<String>();
 		EList<State> unnamedStates = new BasicEList<State>();
 		EList<VariableDefinition> variables = new BasicEList<VariableDefinition>();
+		EList<EventDefinition> events = new BasicEList<EventDefinition>();
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
 		while (iterator.hasNext()) {
@@ -66,6 +70,8 @@ public class Main {
 				EventDefinition event = (EventDefinition) content;
 				if (event.getDirection() == Direction.IN) {
 					System.out.println("IN event: " + event.getName());
+					
+					events.add(event);
 				}
 			}
 		}
@@ -83,17 +89,81 @@ public class Main {
 			++i;
 			System.out.println(unnamed.getName());
 		}
+		
+		// Kódgenerálás
 		System.out.println("Generált print függvény:");
-		System.out.println("public static void print(IExampleStatemachine s) {");
-		for (VariableDefinition variable : variables) {
-			String variableUpperCase = variable.getName().substring(0,1).toUpperCase() + variable.getName().substring(1);
-			System.out.println("	System.out.println(\"W = \" + s.getSCInterface().get" + variableUpperCase + "());");
-		}
-		System.out.println("}");
+		generateCode(variables, events, new PrintWriter(System.out, true));
 		
 		// Transforming the model into a graph representation
 		String content = model2gml.transform(root);
 		// and saving it
 		manager.saveFile("model_output/graph.gml", content);
+	}
+	
+	public static void generateCode(EList<VariableDefinition> variables, EList<EventDefinition> events, PrintWriter writer) {
+		String pre = "package hu.bme.mit.yakindu.analysis.workhere;\r\n" + 
+				"\r\n" + 
+				"import java.io.BufferedReader;\r\n" + 
+				"import java.io.IOException;\r\n" + 
+				"import java.io.InputStreamReader;\r\n" + 
+				"\r\n" + 
+				"import hu.bme.mit.yakindu.analysis.RuntimeService;\r\n" + 
+				"import hu.bme.mit.yakindu.analysis.TimerService;\r\n" + 
+				"import hu.bme.mit.yakindu.analysis.example.ExampleStatemachine;\r\n" + 
+				"import hu.bme.mit.yakindu.analysis.example.IExampleStatemachine;\r\n" + 
+				"\r\n" + 
+				"public class RunStatechart {\r\n" + 
+				"	\r\n" + 
+				"	public static void main(String[] args) throws IOException {\r\n" + 
+				"		ExampleStatemachine s = new ExampleStatemachine();\r\n" + 
+				"		s.setTimer(new TimerService());\r\n" + 
+				"		RuntimeService.getInstance().registerStatemachine(s, 200);\r\n" + 
+				"		\r\n" + 
+				"		s.init();\r\n" + 
+				"		s.enter();\r\n" + 
+				"		s.runCycle();\r\n" + 
+				"		\r\n" + 
+				"		print(s);\r\n" + 
+				"		\r\n" + 
+				"		while(true) {\r\n" + 
+				"		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\r\n" + 
+				"		    boolean exit = false;\r\n" + 
+				"		    String input = br.readLine();\r\n" + 
+				"		    switch(input) {";
+
+		String mid = "		    case \"exit\":\r\n" + 
+				"					exit = true;\r\n" + 
+				"					s.exit();\r\n" + 
+				"					break;\r\n" + 
+				"			}\r\n" + 
+				"		    s.runCycle();\r\n" + 
+				"		    print(s);\r\n" + 
+				"		    if (exit) break;\r\n" + 
+				"		}\r\n" + 
+				"		System.exit(0);\r\n" + 
+				"	}\r\n" + 
+				"\r\n" + 
+				"	public static void print(IExampleStatemachine s) {";
+
+		String end = "	}\r\n" + 
+				"}\r\n" + 
+				"";
+		
+
+		writer.println(pre);
+		for (EventDefinition event : events) {
+			writer.println("				case \"" + event.getName() + "\":");
+			writer.println("					s.raise" + toFirstLetterUpperCase(event.getName()) + "();");
+			writer.println("					break;");
+		}
+		writer.println(mid);
+		for (VariableDefinition variable : variables) {
+			writer.println("		System.out.println(\"" + toFirstLetterUpperCase(variable.getName()).charAt(0) + " = \" + s.getSCInterface().get" + toFirstLetterUpperCase(variable.getName()) + "());");
+		}
+		writer.println(end);
+	}
+	
+	public static String toFirstLetterUpperCase(String text) {
+		return text.substring(0,1).toUpperCase() + text.substring(1);
 	}
 }
